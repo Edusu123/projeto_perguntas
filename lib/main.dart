@@ -8,6 +8,12 @@ class PerguntaApp extends StatelessWidget {
     print('pergunta respondida');
   }
 
+  void Function() funcaoQueRetornaUmaOutraFuncao() {
+    return () {
+      print('pergunta respondida dentro da função');
+    };
+  }
+
   Widget build(BuildContext context) {
     final List<String> perguntas = [
       'Qual é a sua cor favorita?',
@@ -28,11 +34,11 @@ class PerguntaApp extends StatelessWidget {
               ),
               ElevatedButton(
                 child: Text('Resposta 2'),
-                onPressed: null,
+                onPressed: funcaoQueRetornaUmaOutraFuncao(),
               ),
               ElevatedButton(
                 child: Text('Resposta 3'),
-                onPressed: null,
+                onPressed: () => print('função dentro da elemento'),
               ),
             ],
           )),
